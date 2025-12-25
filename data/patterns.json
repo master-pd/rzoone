@@ -1,0 +1,31 @@
+{
+  "bd_operators": {
+    "grameenphone": ["013", "017"],
+    "robi": ["018", "016"],
+    "banglalink": ["019", "014"],
+    "airtel": ["015"],
+    "teletalk": ["013"]
+  },
+  
+  "email_domains": [
+    "gmail.com",
+    "yahoo.com",
+    "hotmail.com",
+    "outlook.com",
+    "live.com",
+    "mail.com",
+    "yandex.com",
+    "protonmail.com"
+  ],
+  
+  "name_patterns": [
+    "first.last",
+    "firstlast",
+    "first_last",
+    "flast",
+    "firstl",
+    "f.last",
+    "first.last.year",
+    "firstlast.year"
+  ]
+}

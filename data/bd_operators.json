@@ -1,1 +1,77 @@
-
+{
+  "mobile_operators": {
+    "grameenphone": {
+      "codes": ["013", "017"],
+      "formats": ["+88013XXXXXXXX", "+88017XXXXXXXX", "013XXXXXXXX", "017XXXXXXXX"],
+      "total_users": "85 million"
+    },
+    "robi": {
+      "codes": ["018", "016"],
+      "formats": ["+88018XXXXXXXX", "+88016XXXXXXXX", "018XXXXXXXX", "016XXXXXXXX"],
+      "total_users": "55 million"
+    },
+    "banglalink": {
+      "codes": ["019", "014"],
+      "formats": ["+88019XXXXXXXX", "+88014XXXXXXXX", "019XXXXXXXX", "014XXXXXXXX"],
+      "total_users": "35 million"
+    },
+    "airtel": {
+      "codes": ["015"],
+      "formats": ["+88015XXXXXXXX", "015XXXXXXXX"],
+      "total_users": "12 million"
+    },
+    "teletalk": {
+      "codes": ["013"],
+      "formats": ["+88013XXXXXXXX", "013XXXXXXXX"],
+      "total_users": "5 million"
+    }
+  },
+  
+  "common_email_patterns": [
+    "first.last",
+    "firstlast",
+    "first_last",
+    "f.last",
+    "firstl",
+    "flast",
+    "first.last.year",
+    "firstlast.year",
+    "first.middle.last",
+    "firstinitial.last"
+  ],
+  
+  "common_domains": {
+    "primary": ["gmail.com", "yahoo.com", "hotmail.com"],
+    "secondary": ["outlook.com", "live.com", "mail.com"],
+    "corporate": ["yahoo.com.bd", "gmail.com.bd"],
+    "educational": ["edu.bd", "ac.bd"]
+  },
+  
+  "name_variations": {
+    "common_first_names": [
+      "mohammad", "md", "mohammed", "muhammed",
+      "abdul", "ahmed", "hasan", "hosain",
+      "kamal", "jamal", "rana", "shah",
+      "rana", "kumar", "chandra", "das"
+    ],
+    "common_last_names": [
+      "khan", "ahmed", "rahman", "hossain",
+      "islam", "ali", "hasan", "hosain",
+      "uddin", "chowdhury", "sarkar", "mondol",
+      "bhuiyan", "talukder", "sheikh", "miah"
+    ]
+  },
+  
+  "validation_rules": {
+    "bd_phone": {
+      "length": 11,
+      "starts_with": "01",
+      "valid_prefixes": ["013", "014", "015", "016", "017", "018", "019"],
+      "format_regex": "^01[3-9]\\d{8}$"
+    },
+    "bd_email": {
+      "common_domains": ["gmail.com", "yahoo.com", "hotmail.com", "outlook.com"],
+      "invalid_patterns": ["example.com", "test.com", "domain.com"]
+    }
+  }
+}
