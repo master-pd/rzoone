@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  marpd:
+    build: .
+    container_name: marpd
+    volumes:
+      - ./data:/app/data
+      - ./results:/app/results
+    environment:
+      - MARPD_ENV=production
+      - TZ=Asia/Dhaka
+    restart: unless-stopped
+    stdin_open: true
+    tty: true

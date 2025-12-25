@@ -1,0 +1,115 @@
+{
+  "app": {
+    "name": "MAR-PD Contact Extractor",
+    "version": "3.5",
+    "author": "Master",
+    "license": "For Personal Recovery Use Only",
+    "release_date": "2024-01-15"
+  },
+  
+  "settings": {
+    "request_timeout": 30,
+    "delay_between_requests": 1.5,
+    "max_retries": 3,
+    "concurrent_threads": 3,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    
+    "rate_limiting": {
+      "requests_per_minute": 30,
+      "max_total_requests": 100,
+      "cooldown_period": 300
+    }
+  },
+  
+  "extraction_methods": {
+    "enabled_methods": [
+      "profile_html",
+      "about_section",
+      "mobile_site",
+      "graphql_api",
+      "contact_point",
+      "backup_sources",
+      "security_recovery",
+      "social_links",
+      "public_records",
+      "metadata_analysis"
+    ],
+    
+    "method_weights": {
+      "graphql_api": 0.9,
+      "security_recovery": 0.8,
+      "profile_html": 0.7,
+      "about_section": 0.6,
+      "mobile_site": 0.5,
+      "backup_sources": 0.4,
+      "contact_point": 0.3,
+      "social_links": 0.2,
+      "public_records": 0.1
+    }
+  },
+  
+  "patterns": {
+    "bd_phone": "(?:\\+?88)?01[3-9]\\d{8}",
+    "international_phone": "\\+?88?01[3-9]\\d{8}",
+    "email": "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b",
+    "facebook_uid": "\\d{9,}",
+    "facebook_username": "[a-zA-Z0-9.]+"
+  },
+  
+  "output": {
+    "save_json": true,
+    "save_txt": true,
+    "save_logs": true,
+    "export_formats": ["json", "txt", "csv"],
+    "auto_backup": true,
+    
+    "report_templates": {
+      "basic": "results/templates/basic_report.txt",
+      "detailed": "results/templates/detailed_report.txt",
+      "professional": "results/templates/professional_report.html"
+    }
+  },
+  
+  "security": {
+    "encryption_enabled": true,
+    "log_encryption": true,
+    "data_anonymization": true,
+    "auto_log_cleanup": true,
+    "session_timeout": 3600,
+    
+    "ethical_checks": {
+      "require_agreement": true,
+      "log_all_activity": true,
+      "limit_targets_per_day": 5,
+      "prevent_bulk_processing": true
+    }
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "file": "results/logs/marpd.log",
+    "max_size_mb": 10,
+    "backup_count": 5,
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  
+  "cache": {
+    "enabled": true,
+    "directory": "data/cache",
+    "ttl_hours": 24,
+    "max_size_mb": 100,
+    "compression": true
+  },
+  
+  "notifications": {
+    "completion_notification": true,
+    "error_notification": true,
+    "summary_report": true
+  },
+  
+  "updates": {
+    "check_for_updates": true,
+    "update_url": "https://api.github.com/repos/master/marpd/releases",
+    "auto_update": false
+  }
+}
